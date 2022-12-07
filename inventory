@@ -1,0 +1,5 @@
+[nagiosClient]
+nicole_dino@192.168.56.104
+
+[nagiosServer]
+ndino@192.168.56.107

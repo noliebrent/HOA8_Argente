@@ -1,0 +1,21 @@
+---
+  - name: Installing Nagios on Ubuntu
+    tags: ubuntu,nagios
+    apt:
+      name: nagios4
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Installing Nagios on CentOS
+    tags: centos,nagios
+    dnf:
+      name: nagios
+      state: latest
+    when: ansible_distribution == "CentOS"
+
+  - name: Enabling/Starting Nagios on CentOS
+    tags: centos,apache,httpd,nagios
+    service:
+      name: nagios
+      state: started
+    when: ansible_distribution == "CentOS"
